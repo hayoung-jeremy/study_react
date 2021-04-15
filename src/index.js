@@ -1,12 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import MyComponent from "./MyComponent";
 
+// StrictMode가 활성화 되어있으면, multiple component를 같이 로딩할 수 있다.
 ReactDOM.render(
   <React.StrictMode>
     <App />
-    <MyComponent />
   </React.StrictMode>,
   document.getElementById('root')
 );
