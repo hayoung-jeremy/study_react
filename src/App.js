@@ -1,3 +1,6 @@
+
+import PropTypes from "prop-types";
+
 // how react works :
 // 1) App.js 에서 코드 작성 --> index.js 가 App.js 를 index.html로 전달해줌
 // 또한, 이 과정에서 실제 index.html파일에 추가되지는 않지만 local에서 내가 작성한 코드를 확인 가능
@@ -40,15 +43,24 @@ function ShowingData ({dataName, dataContents}){
       <div>
         <div>{ dataName }</div>
         <div>{ dataContents }</div>
+        <hr/>
       </div>
     </>
   )
 }
+
+// 전달받은 prop이 내가 전달하고자하는 prop이 맞는지 확인하는 것 npm i prop-types 로 설치
+ShowingData.propTypes = {
+  dataName: PropTypes.string.isRequired,
+  dataContents: PropTypes.string.isRequired
+};
+
 function App() {
   return (
     <div className="App">
       <div>
-        {virtual_data.map(dataset => <ShowingData dataName={dataset.name} dataContents={dataset.contents} />)}
+        {/* key 의 경우, 이는 props로 전달되지 않으며, react 내부에서 사용하기 위함 */}
+        {virtual_data.map(dataset => <ShowingData key={dataset.id} dataName={dataset.name} dataContents={dataset.contents} />)}
       </div>
     </div>
   );
