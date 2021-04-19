@@ -2,6 +2,7 @@ import React from 'react';
 import { HashRouter, Route } from "react-router-dom";
 import Home from "./routes/Home";
 import About from "./routes/About";
+import Navigation from "./components/Navigation";
 
 
 function App () {
@@ -9,7 +10,8 @@ function App () {
     <HashRouter>
       {/* 만약 /about로 접속할 경우, About component를 보여주어라 */}
       
-      <Route path="/" component={Home} />
+      <Navigation />
+      <Route exact={true} path="/" component={Home} />
       <Route path="/about" component={About} />
 
     </HashRouter>
