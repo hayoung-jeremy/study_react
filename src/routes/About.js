@@ -1,7 +1,12 @@
 import React from 'react';
+import "./About.css";
 
 function About (){
-    return <span>About this page : I built it by using Route </span>
+    return (
+        <div className="about__container">
+            <span>This is built by using Route</span>
+        </div>
+    )
 }
 
 export default About;
